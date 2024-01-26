@@ -65,10 +65,15 @@ const configSSR = {
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       extensions: ['.js', '.ts'],
-      plugins: [['@babel/plugin-transform-typescript'], ['effector/babel-plugin', {
-        reactSsr: true,
-        factories: ['src/factories/create-form', 'src/factories/create-field-array']
-      }]],
+      plugins: [
+        ['@babel/plugin-transform-typescript'],
+        [
+          'effector/babel-plugin',
+          {
+            factories: ['src/factories/create-form', 'src/factories/create-field-array'],
+          },
+        ],
+      ],
     }),
     // terser(),
   ],

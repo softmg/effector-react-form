@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FieldArray add form item with values (x2) > remove 1 > add inner 0 (x1) > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 2,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 3,
           "username": "inner 0",
         },
@@ -121,17 +121,17 @@ exports[`FieldArray add form item with values (x2) > remove 1 > add inner 0 (x1)
 `;
 
 exports[`FieldArray add form item with values (x3) > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 1,
       "username": "0",
     },
-    Object {
+    {
       "id": 2,
       "username": "1",
     },
-    Object {
+    {
       "id": 3,
       "username": "2",
     },
@@ -140,32 +140,32 @@ Object {
 `;
 
 exports[`FieldArray add form item with values (x3) > add inner (x3) > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 1,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 4,
           "username": "inner 0",
         },
       ],
       "username": "0",
     },
-    Object {
+    {
       "id": 2,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 5,
           "username": "inner 1",
         },
       ],
       "username": "1",
     },
-    Object {
+    {
       "id": 3,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 6,
           "username": "inner 2",
         },
@@ -177,22 +177,22 @@ Object {
 `;
 
 exports[`FieldArray add form item with values (x3) > add inner (x3) > remove form item 1 > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 1,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 4,
           "username": "inner 0",
         },
       ],
       "username": "0",
     },
-    Object {
+    {
       "id": 3,
-      "inners": Array [
-        Object {
+      "inners": [
+        {
           "id": 6,
           "username": "inner 2",
         },
@@ -680,8 +680,8 @@ exports[`FieldArray add form item with values (x3) > add inner (x3) > render 1`]
 `;
 
 exports[`FieldArray add form item with values (x3) > remove(1) > $fieldsInline 1`] = `
-Object {
-  "parents.0.profile.firstName": Object {
+{
+  "parents.0.profile.firstName": {
     "_type": "fieldMeta",
     "active": false,
     "blurred": false,
@@ -692,7 +692,7 @@ Object {
     "touchedAfterOuterError": false,
     "validate": [Function],
   },
-  "parents.0.username": Object {
+  "parents.0.username": {
     "_type": "fieldMeta",
     "active": false,
     "blurred": false,
@@ -703,7 +703,7 @@ Object {
     "touchedAfterOuterError": false,
     "validate": [Function],
   },
-  "parents.1.profile.firstName": Object {
+  "parents.1.profile.firstName": {
     "_type": "fieldMeta",
     "active": false,
     "blurred": false,
@@ -714,7 +714,7 @@ Object {
     "touchedAfterOuterError": false,
     "validate": [Function],
   },
-  "parents.1.username": Object {
+  "parents.1.username": {
     "_type": "fieldMeta",
     "active": false,
     "blurred": false,
@@ -729,13 +729,13 @@ Object {
 `;
 
 exports[`FieldArray add form item with values (x3) > remove(1) > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 1,
       "username": "0",
     },
-    Object {
+    {
       "id": 3,
       "username": "2",
     },
@@ -744,18 +744,18 @@ Object {
 `;
 
 exports[`FieldArray add form item with values > $errorsInline 1`] = `
-Object {
+{
   "parents.0.profile.firstName": "Field is required",
   "parents.0.username": "Field is required",
 }
 `;
 
 exports[`FieldArray add form item with values > $values 1`] = `
-Object {
-  "parents": Array [
-    Object {
+{
+  "parents": [
+    {
       "id": 1,
-      "profile": Object {
+      "profile": {
         "firstName": "Timofey",
       },
       "username": "gto",
@@ -765,7 +765,7 @@ Object {
 `;
 
 exports[`FieldArray add form item with values > render 1`] = `
-Array [
+[
   <div
     class="formItems"
     role="formItems"
@@ -830,7 +830,7 @@ Array [
 `;
 
 exports[`FieldArray render 1`] = `
-Array [
+[
   <div
     class="formItems"
     role="formItems"

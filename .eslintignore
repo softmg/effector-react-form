@@ -2,6 +2,8 @@ types
 tools
 utils
 ssr
+scope
 .eslintrc.js
 *.config.js
+*.js
 __tests__

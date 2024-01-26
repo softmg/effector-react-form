@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MixValidation onFocus, onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -54,7 +54,7 @@ Array [
 `;
 
 exports[`MixValidation onFocus, onChange: "t" -> "" 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -104,7 +104,7 @@ Array [
 `;
 
 exports[`MixValidation onFocus, onChange: "t" -> "", onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -157,7 +157,7 @@ Array [
 `;
 
 exports[`MixValidation onFocus, onChange: "t", onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -210,7 +210,7 @@ Array [
 `;
 
 exports[`MixValidation onFocus, onChange: "test", onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -260,7 +260,7 @@ Array [
 `;
 
 exports[`MixValidation submit 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"

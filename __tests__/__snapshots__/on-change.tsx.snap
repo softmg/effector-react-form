@@ -3,12 +3,12 @@
 exports[`onChange onChange after change("t") 1`] = `undefined`;
 
 exports[`onChange onChange after change("te") 1`] = `
-Object {
+{
   "type": "return",
-  "value": Object {
-    "errorsInline": Object {},
-    "fieldsInline": Object {
-      "profile.firstName": Object {
+  "value": {
+    "errorsInline": {},
+    "fieldsInline": {
+      "profile.firstName": {
         "_type": "fieldMeta",
         "active": false,
         "blurred": false,
@@ -19,7 +19,7 @@ Object {
         "touchedAfterOuterError": false,
         "validate": undefined,
       },
-      "profile.lastName": Object {
+      "profile.lastName": {
         "_type": "fieldMeta",
         "active": false,
         "blurred": false,
@@ -30,7 +30,7 @@ Object {
         "touchedAfterOuterError": false,
         "validate": undefined,
       },
-      "username": Object {
+      "username": {
         "_type": "fieldMeta",
         "active": false,
         "blurred": false,
@@ -42,14 +42,14 @@ Object {
         "validate": [Function],
       },
     },
-    "form": Object {
+    "form": {
       "hasError": false,
       "hasOuterError": false,
       "submitted": false,
     },
-    "meta": Object {},
-    "outerErrorsInline": Object {},
-    "values": Object {
+    "meta": {},
+    "outerErrorsInline": {},
+    "values": {
       "username": "te",
     },
   },

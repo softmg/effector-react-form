@@ -1,4 +1,7 @@
 # Effector-react-form
+
+Clone based on [effector-react-form](https://github.com/GTOsss/effector-react-form)
+
 Connect your forms with state manager
 ## Visit [effector-react-form.webstap](https://effector-react-form.webstap.ru/en) to see full documentation and examples.
 
@@ -8,17 +11,17 @@ Connect your forms with state manager
 
 ```shell
 # Yarn
-yarn add effector-react-form
+yarn add @softmg/effector-react-form
 
 # NPM
-npm install --save effector-react-form
+npm install --save @softmg/effector-react-form
 ```
 
 <h3>Short example</h3>
 <span>Create single form</span>
 
 ```js
-import { createForm } from 'effector-react-form';
+import { createForm } from '@softmg/effector-react-form';
 
 const form = createForm<Values>({
   initialValues: {
@@ -34,7 +37,7 @@ const form = createForm<Values>({
 <span>Set this form to our jsx</span>
 
 ```tsx
-import { useForm } from 'effector-react-form';
+import { useForm } from '@softmg/effector-react-form';
 
 const validateFields = (value) => {
   if (!value) return 'Field is required';

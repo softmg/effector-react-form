@@ -1,14 +1,7 @@
-import {
-  combine,
-  createEvent as createEventNative,
-  createStore as createStoreNative,
-  forward,
-  guard,
-  is,
-  sample,
-} from 'effector';
+import { combine, createEvent as createEventNative, createStore as createStoreNative, is, sample } from 'effector';
 import { SyntheticEvent } from 'react';
 import {
+  AllFormState,
   CreateFormParams,
   ErrorsInline,
   FieldInitParams,
@@ -69,7 +62,7 @@ const createForm = <Values extends object = any, Meta = any>({
   const reset = createEvent(`Form_${name}_Reset`);
 
   const setOuterErrorsInlineState = createEvent<ErrorsInline>(`Form_${name}_SetOuterErrorsInlineState`);
-  const validateForm = createEvent(`Form_${name}_ValidateForm`);
+  const validateForm = createEvent<AllFormState<Values, any>>(`Form_${name}_ValidateForm`);
   const submit = createEvent(`Form_${name}_Submit`);
   const onSubmit = createEvent<SubmitParams<Values, Meta>>(`Form_${name}_OnSubmit`);
   const onChange = createEvent<SubmitParams<Values, Meta>>(`Form_${name}_OnChange`);
@@ -137,15 +130,15 @@ const createForm = <Values extends object = any, Meta = any>({
     });
   }
 
-  forward({
-    from: submit,
-    to: [validateForm, resetOuterFieldStateFlags],
+  sample({
+    clock: submit,
+    target: [validateForm, resetOuterFieldStateFlags],
   });
 
   if (resetOuterErrorsBySubmit) {
-    forward({
-      from: submit,
-      to: resetOuterErrors,
+    sample({
+      clock: submit,
+      target: resetOuterErrors,
     });
   }
 
@@ -170,7 +163,7 @@ const createForm = <Values extends object = any, Meta = any>({
 
   sample({
     source: $allFormState,
-    clock: guard({
+    clock: sample({
       source: submit,
       filter: $allFormState.map(onSubmitGuardFn),
     }),
@@ -180,7 +173,7 @@ const createForm = <Values extends object = any, Meta = any>({
 
   sample({
     source: $allFormState,
-    clock: guard({
+    clock: sample({
       source: onChangeFieldBrowser,
       filter: $allFormState.map(onChangeGuardFn),
     }),
@@ -189,10 +182,15 @@ const createForm = <Values extends object = any, Meta = any>({
   });
 
   if (onSubmitArg) {
-    if (is.effect(onSubmitArg) || is.event(onSubmitArg)) {
-      forward({
-        from: onSubmit,
-        to: onSubmitArg,
+    if (is.event(onSubmitArg)) {
+      sample({
+        clock: onSubmit,
+        target: onSubmitArg,
+      });
+    } else if (is.effect(onSubmitArg)) {
+      sample({
+        clock: onSubmit,
+        target: onSubmitArg,
       });
     } else if (typeof onSubmitArg === 'function') {
       onSubmit.watch(onSubmitArg);
@@ -200,10 +198,15 @@ const createForm = <Values extends object = any, Meta = any>({
   }
 
   if (onChangeArg) {
-    if (is.effect(onChangeArg) || is.event(onChangeArg)) {
-      forward({
-        from: onChange,
-        to: onChangeArg,
+    if (is.event(onChangeArg)) {
+      sample({
+        clock: onChange,
+        target: onChangeArg,
+      });
+    } else if (is.effect(onChangeArg)) {
+      sample({
+        clock: onChange,
+        target: onChangeArg,
       });
     } else if (typeof onChangeArg === 'function') {
       onChange.watch(onChangeArg);

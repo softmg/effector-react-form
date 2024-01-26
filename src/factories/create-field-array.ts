@@ -92,8 +92,8 @@ const createFieldArray = <Values extends object = any>({
   // });
 
   sample({
-    source: form.$allFormState,
     clock: form.fieldInit,
+    source: form.$allFormState,
     target: form.validateForm,
   });
 

@@ -4,10 +4,10 @@ module.exports = {
   extends: [
     // 'airbnb-typescript', not working todo resolve error
     'prettier',
-    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
+    'plugin:effector/future',
   ],
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'effector'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

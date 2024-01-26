@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FieldLevelValidation onFocus, onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -54,7 +54,7 @@ Array [
 `;
 
 exports[`FieldLevelValidation onFocus, onChange: "t" -> "" 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -104,7 +104,7 @@ Array [
 `;
 
 exports[`FieldLevelValidation onFocus, onChange: "t" -> "", onBlur 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"
@@ -157,12 +157,12 @@ Array [
 `;
 
 exports[`FieldLevelValidation reset event 1`] = `
-Object {
-  "errorsInline": Object {
+{
+  "errorsInline": {
     "profile.firstName": "Field is required",
   },
-  "fieldsInline": Object {
-    "profile.firstName": Object {
+  "fieldsInline": {
+    "profile.firstName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -173,7 +173,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": [Function],
     },
-    "profile.lastName": Object {
+    "profile.lastName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -184,7 +184,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": undefined,
     },
-    "username": Object {
+    "username": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -196,19 +196,19 @@ Object {
       "validate": undefined,
     },
   },
-  "form": Object {
+  "form": {
     "hasError": true,
     "hasOuterError": false,
     "submitted": false,
   },
-  "meta": Object {},
-  "outerErrorsInline": Object {},
-  "values": Object {},
+  "meta": {},
+  "outerErrorsInline": {},
+  "values": {},
 }
 `;
 
 exports[`FieldLevelValidation submit 1`] = `
-Array [
+[
   <div
     class="input-wrap"
     role="wrapper-for-input"

@@ -17,7 +17,7 @@ export type GetNameStr<Obj> = {
     K1 extends keyof Obj[K0],
     K2 extends keyof Obj[K0][K1],
     K3 extends keyof Obj[K0][K1][K2],
-    K4 extends keyof Obj[K0][K1][K2][K3]
+    K4 extends keyof Obj[K0][K1][K2][K3],
   >(
     k0: K0,
     k1: K1,
@@ -32,7 +32,7 @@ export type GetNameStr<Obj> = {
     K2 extends keyof Obj[K0][K1],
     K3 extends keyof Obj[K0][K1][K2],
     K4 extends keyof Obj[K0][K1][K2][K3],
-    K5 extends keyof Obj[K0][K1][K2][K3][K4]
+    K5 extends keyof Obj[K0][K1][K2][K3][K4],
   >(
     k0: K0,
     k1: K1,
@@ -49,7 +49,7 @@ export type GetNameStr<Obj> = {
     K3 extends keyof Obj[K0][K1][K2],
     K4 extends keyof Obj[K0][K1][K2][K3],
     K5 extends keyof Obj[K0][K1][K2][K3][K4],
-    K6 extends keyof Obj[K0][K1][K2][K3][K4][K5]
+    K6 extends keyof Obj[K0][K1][K2][K3][K4][K5],
   >(
     k0: K0,
     k1: K1,

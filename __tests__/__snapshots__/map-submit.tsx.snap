@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MapSubmit onChange form with mapSubmit 1`] = `
-Object {
-  "errorsInline": Object {},
-  "fieldsInline": Object {
-    "profile.firstName": Object {
+{
+  "errorsInline": {},
+  "fieldsInline": {
+    "profile.firstName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -15,7 +15,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": undefined,
     },
-    "username": Object {
+    "username": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -27,18 +27,18 @@ Object {
       "validate": undefined,
     },
   },
-  "form": Object {
+  "form": {
     "hasError": false,
     "hasOuterError": false,
     "submitted": false,
   },
-  "meta": Object {},
-  "outerErrorsInline": Object {},
-  "values": Object {
-    "info": Object {
+  "meta": {},
+  "outerErrorsInline": {},
+  "values": {
+    "info": {
       "username": "test username",
     },
-    "profile": Object {
+    "profile": {
       "firstName": "test first name",
     },
   },
@@ -46,10 +46,10 @@ Object {
 `;
 
 exports[`MapSubmit onChange form without mapSubmit 1`] = `
-Object {
-  "errorsInline": Object {},
-  "fieldsInline": Object {
-    "profile.firstName": Object {
+{
+  "errorsInline": {},
+  "fieldsInline": {
+    "profile.firstName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -60,7 +60,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": undefined,
     },
-    "username": Object {
+    "username": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -72,15 +72,15 @@ Object {
       "validate": undefined,
     },
   },
-  "form": Object {
+  "form": {
     "hasError": false,
     "hasOuterError": false,
     "submitted": false,
   },
-  "meta": Object {},
-  "outerErrorsInline": Object {},
-  "values": Object {
-    "profile": Object {
+  "meta": {},
+  "outerErrorsInline": {},
+  "values": {
+    "profile": {
       "firstName": "test first name",
     },
     "username": "test username",
@@ -89,10 +89,10 @@ Object {
 `;
 
 exports[`MapSubmit onSubmit form with mapSubmit 1`] = `
-Object {
-  "errorsInline": Object {},
-  "fieldsInline": Object {
-    "profile.firstName": Object {
+{
+  "errorsInline": {},
+  "fieldsInline": {
+    "profile.firstName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -103,7 +103,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": undefined,
     },
-    "username": Object {
+    "username": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -115,18 +115,18 @@ Object {
       "validate": undefined,
     },
   },
-  "form": Object {
+  "form": {
     "hasError": false,
     "hasOuterError": false,
     "submitted": true,
   },
-  "meta": Object {},
-  "outerErrorsInline": Object {},
-  "values": Object {
-    "info": Object {
+  "meta": {},
+  "outerErrorsInline": {},
+  "values": {
+    "info": {
       "username": "test username",
     },
-    "profile": Object {
+    "profile": {
       "firstName": "test first name",
     },
   },
@@ -134,10 +134,10 @@ Object {
 `;
 
 exports[`MapSubmit onSubmit form without mapSubmit 1`] = `
-Object {
-  "errorsInline": Object {},
-  "fieldsInline": Object {
-    "profile.firstName": Object {
+{
+  "errorsInline": {},
+  "fieldsInline": {
+    "profile.firstName": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -148,7 +148,7 @@ Object {
       "touchedAfterOuterError": false,
       "validate": undefined,
     },
-    "username": Object {
+    "username": {
       "_type": "fieldMeta",
       "active": false,
       "blurred": false,
@@ -160,15 +160,15 @@ Object {
       "validate": undefined,
     },
   },
-  "form": Object {
+  "form": {
     "hasError": false,
     "hasOuterError": false,
     "submitted": true,
   },
-  "meta": Object {},
-  "outerErrorsInline": Object {},
-  "values": Object {
-    "profile": Object {
+  "meta": {},
+  "outerErrorsInline": {},
+  "values": {
+    "profile": {
       "firstName": "test first name",
     },
     "username": "test username",

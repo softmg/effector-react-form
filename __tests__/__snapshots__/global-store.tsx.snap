@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GlobalStore onChange username ($values) 1`] = `
-Object {
+{
   "username": "test",
 }
 `;
 
 exports[`GlobalStore onChange username 1`] = `
-Array [
+[
   <input
     class="input"
     name="username"
