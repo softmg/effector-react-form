@@ -7,10 +7,12 @@
   "types": "./types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "require": "./effector-react-form.cjs.js",
       "default": "./effector-react-form.esm.js"
     },
     "./scope": {
+      "types": "./types/index.d.ts",
       "require": "./scope.js",
       "default": "./scope.esm.js"
     }
