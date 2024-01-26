@@ -16,6 +16,7 @@
     }
   },
   "files": [
+    "scope",
     "types",
     "effector-react-form.cjs.js",
     "effector-react-form.esm.js",
