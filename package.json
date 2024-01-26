@@ -1,6 +1,6 @@
 {
   "name": "@softmg/effector-react-form",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "form manager",
   "main": "effector-react-form.cjs.js",
   "module": "effector-react-form.esm.js",
