@@ -1,5 +1,5 @@
 __tests__
-github
+.github
 node_modules
 webpack
 tools
