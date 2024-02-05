@@ -170,6 +170,7 @@ export type CreateFormParams<Values = any, MappedValues = Values, Meta = any> = 
   domain?: Domain;
   resetOuterErrorsBySubmit?: boolean;
   resetOuterErrorByOnChange?: boolean;
+  validateByOnChange?: boolean;
 };
 
 export type AllFormState<Values, Meta = any> = {
