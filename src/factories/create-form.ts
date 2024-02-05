@@ -86,7 +86,7 @@ const createForm = <Values extends object = any, Meta = any>({
   });
 
   const onChangeFieldBrowser = createEvent<{ event: SyntheticEvent; name: string; flat?: boolean }>(
-    `Form_${name}_OnChange`,
+    `Form_${name}_OnChangeFieldBrowser`,
   );
   const onChangeField = onChangeFieldBrowser.map<{ value: any; name: string; flat?: boolean }>(
     ({ name, event, flat }) => ({
@@ -95,8 +95,8 @@ const createForm = <Values extends object = any, Meta = any>({
       flat,
     }),
   );
-  const onFocusFieldBrowser = createEvent<{ event: SyntheticEvent; name: string }>(`Form_${name}_OnFocus`);
-  const onBlurFieldBrowser = createEvent<{ event: SyntheticEvent; name: string }>(`Form_${name}_OnBlur`);
+  const onFocusFieldBrowser = createEvent<{ event: SyntheticEvent; name: string }>(`Form_${name}_OnFocusFieldBrowser`);
+  const onBlurFieldBrowser = createEvent<{ event: SyntheticEvent; name: string }>(`Form_${name}_OnBlurFieldBrowser`);
   const fieldInit = createEvent<FieldInitParams>(`Form_${name}_fieldInit`);
 
   const validateByValues = ({ values, fieldsInline, ...rest }: SubmitParams) => {
