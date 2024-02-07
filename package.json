@@ -39,7 +39,7 @@
   "author": "Goncharov Timofey",
   "repository": {
     "type": "git",
-    "url": "https://github.com/softmg/effector-react-form"
+    "url": "git+https://github.com/softmg/effector-react-form.git"
   },
   "license": "ISC",
   "peerDependencies": {
