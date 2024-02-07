@@ -1,4 +1,4 @@
-import { Store, Domain, StoreWritable, EventCallable } from 'effector';
+import { Store, StoreWritable, EventCallable } from 'effector';
 import React from 'react';
 import { GetName, GetNameStr } from './utils/object-manager';
 
@@ -167,7 +167,6 @@ export type CreateFormParams<Values = any, MappedValues = Values, Meta = any> = 
   onChangeGuardFn?: GuardFn<Values, Meta>;
   initialValues?: Values;
   initialMeta?: Meta;
-  domain?: Domain;
   resetOuterErrorsBySubmit?: boolean;
   resetOuterErrorByOnChange?: boolean;
   validateByOnChange?: boolean;
@@ -228,7 +227,6 @@ export type FieldArray<Values = any> = {
 
 export type CreateFieldArrayParams<Values = any> = {
   form: Form<Values>;
-  domain?: Domain;
 };
 
 // declare const useFieldArray: <Values extends AnyState = AnyState>(

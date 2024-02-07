@@ -126,8 +126,6 @@ const initialValues = {
 
 <b>initialMeta</b>: an object with initial values of your form fields.
 
-<b>domain</b>: takes Effector-domain in which stores and form events will be created.
-
 <b>resetOuterErrorsBySubmit</b>: takes true / false. Determines whether outer form errors should be cleared on the onSubmit event. The default is true.
 
 <b>resetOuterErrorByOnChange</b>: takes true / false. Determines whether outer form errors should be cleared on the onChange event. The default is true.

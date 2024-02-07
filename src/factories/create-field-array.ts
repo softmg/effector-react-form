@@ -1,14 +1,11 @@
-import { createEvent as createEventNative, sample } from 'effector';
+import { createEvent, sample } from 'effector';
 import { CreateFieldArrayParams, FieldArray } from '../ts';
 import { getIn, removeFromInlineMap, setIn } from '../utils/object-manager';
 
 const createFieldArray = <Values extends object = any>({
   form,
-  domain,
 }: CreateFieldArrayParams<Values>): FieldArray<Values> => {
   const { $values, $fieldsInline } = form;
-
-  const createEvent = domain ? domain.createEvent : createEventNative;
 
   const remove = createEvent<{ fieldName: string; index: number }>(`hookForm_${form.name}_fieldArray_Remove`);
   const push = createEvent<{ fieldName: string; value: any | any[] }>(`hookForm_${form.name}_fieldArray_Push`);

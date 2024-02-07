@@ -1,4 +1,4 @@
-import { combine, createEvent as createEventNative, createStore as createStoreNative, is, sample } from 'effector';
+import { combine, createEvent, createStore, is, sample } from 'effector';
 import { SyntheticEvent } from 'react';
 import {
   AllFormState,
@@ -40,14 +40,10 @@ const createForm = <Values extends object = any, Meta = any>({
   onChangeGuardFn = ({ form }) => !form.hasError,
   initialValues,
   initialMeta = {} as any,
-  domain,
   resetOuterErrorsBySubmit = true,
   resetOuterErrorByOnChange = true,
   validateByOnChange = true,
 }: CreateFormParams<Values, Values, Meta> = {}): Form<Values> => {
-  const createEvent = domain ? domain.createEvent : createEventNative;
-  const createStore = domain ? domain.createStore : createStoreNative;
-
   const setMeta = createEvent<Meta>(`Form_${name}_SetMeta`);
 
   const setValue = createEvent<SetValueParams>(`Form_${name}_SetValue`);
