@@ -37,7 +37,7 @@ type UseFormResultWithFactory<Values> = {
   setOrDeleteOuterError: (params: SetOrDeleteOuterErrorParams) => SetOrDeleteOuterErrorParams;
   setOuterErrorsInlineState: (params: ErrorsInline) => ErrorsInline;
   validateForm: () => void;
-  submit: (e: any) => void;
+  submit: () => void;
   reset: () => void;
   fieldInit: (params: FieldInitParams) => FieldInitParams;
 };
@@ -58,9 +58,9 @@ const useForm = <Values extends AnyState = AnyState, Meta = any>({
   const setOrDeleteOuterError = useUnit(form.setOrDeleteOuterError);
 
   const setOuterErrorsInlineState = useUnit(form.setOuterErrorsInlineState);
-  const validateForm = useUnit(form.validateForm) as any;
-  const submit = useUnit(form.submit) as any;
-  const reset = useUnit(form.reset) as any;
+  const validateForm = useUnit(form.validateForm);
+  const submit = useUnit(form.submit);
+  const reset = useUnit(form.reset);
 
   const onChangeFieldBrowser = useUnit(form.onChangeFieldBrowser);
   const onFocusFieldBrowser = useUnit(form.onFocusFieldBrowser);
@@ -81,8 +81,8 @@ const useForm = <Values extends AnyState = AnyState, Meta = any>({
     setMeta(meta);
   }, [meta]);
 
-  const controller = useCallback<ControllerHof>(({ name: nameProp, validate, flat }) => {
-    return (): ControllerInjectedResult => {
+  const controller = useCallback<ControllerHof<any, Meta>>(({ name: nameProp, validate, flat }) => {
+    return (): ControllerInjectedResult<any, Meta> => {
       const refName = useRef<string>(makeConsistentKey(nameProp));
       refName.current = makeConsistentKey(nameProp);
       const refFlat = useRef<boolean>(flat);
@@ -168,8 +168,9 @@ const useForm = <Values extends AnyState = AnyState, Meta = any>({
     };
   }, []);
 
-  const handleSubmit = useCallback((e: React.SyntheticEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  const handleSubmit = useCallback((event: React.SyntheticEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+
     submit();
   }, []);
 

@@ -1,4 +1,4 @@
-import { Store, StoreWritable, EventCallable } from 'effector';
+import { Store, Domain, StoreWritable, EventCallable } from 'effector';
 import React from 'react';
 import { GetName, GetNameStr } from './utils/object-manager';
 
@@ -76,13 +76,13 @@ export type FieldInitParams = {
   validate?: ControllerParams['validate'];
 };
 
-export type ControllerInjectedResult<Meta = any> = {
+export type ControllerInjectedResult<Value = any, Meta = any> = {
   input: {
     name: string;
-    value;
-    onChange: (event: any) => void;
-    onFocus: (event: any) => void;
-    onBlur: (event: any) => void;
+    value: Value;
+    onChange: (eventOrValue: React.SyntheticEvent | Value) => void;
+    onFocus: (event: React.SyntheticEvent) => void;
+    onBlur: (event: React.SyntheticEvent) => void;
   };
   error: Message;
   innerError: Message;
@@ -100,9 +100,9 @@ export type ControllerInjectedResult<Meta = any> = {
   fieldState: FieldState;
 };
 
-export type Controller<Meta = any> = () => ControllerInjectedResult<Meta>;
+export type Controller<Value = any, Meta = any> = () => ControllerInjectedResult<Value, Meta>;
 
-export type ControllerHof<Meta = any> = (a: ControllerParams) => Controller<Meta>;
+export type ControllerHof<Value = any, Meta = any> = (params: ControllerParams) => Controller<Value, Meta>;
 
 export type FormValidate<Values, Meta> = (params: FormValidateParams<Values, Meta>) => ErrorsInline;
 
@@ -167,6 +167,7 @@ export type CreateFormParams<Values = any, MappedValues = Values, Meta = any> = 
   onChangeGuardFn?: GuardFn<Values, Meta>;
   initialValues?: Values;
   initialMeta?: Meta;
+  domain?: Domain;
   resetOuterErrorsBySubmit?: boolean;
   resetOuterErrorByOnChange?: boolean;
   validateByOnChange?: boolean;
@@ -204,8 +205,8 @@ export type Form<Values = any, Meta = any> = {
   setMeta: EventCallable<Meta>;
 
   setOuterErrorsInlineState: EventCallable<any>;
-  validateForm: EventCallable<AllFormState<Values, any>>;
-  submit: EventCallable<any>;
+  validateForm: EventCallable<void>;
+  submit: EventCallable<void>;
   onSubmit: EventCallable<SubmitParams<Values, Meta>>;
 
   onChangeFieldBrowser: EventCallable<{ event: React.SyntheticEvent; name: string; flat?: boolean }>;
@@ -227,6 +228,7 @@ export type FieldArray<Values = any> = {
 
 export type CreateFieldArrayParams<Values = any> = {
   form: Form<Values>;
+  domain?: Domain;
 };
 
 // declare const useFieldArray: <Values extends AnyState = AnyState>(

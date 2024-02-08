@@ -4,11 +4,18 @@ import { getIn, removeFromInlineMap, setIn } from '../utils/object-manager';
 
 const createFieldArray = <Values extends object = any>({
   form,
+  domain,
 }: CreateFieldArrayParams<Values>): FieldArray<Values> => {
   const { $values, $fieldsInline } = form;
 
-  const remove = createEvent<{ fieldName: string; index: number }>(`hookForm_${form.name}_fieldArray_Remove`);
-  const push = createEvent<{ fieldName: string; value: any | any[] }>(`hookForm_${form.name}_fieldArray_Push`);
+  const remove = createEvent<{ fieldName: string; index: number }>({
+    name: `hookForm_${form.name}_fieldArray_Remove`,
+    domain,
+  });
+  const push = createEvent<{ fieldName: string; value: any | any[] }>({
+    name: `hookForm_${form.name}_fieldArray_Push`,
+    domain,
+  });
 
   // const unshift = useMemo(() => createEvent<any>('hookForm_fieldArray_Unshift'), []);
   // const move = useMemo(() => createEvent<{ from: number; to: number }>('hookForm_fieldArray_Move'), []);
@@ -90,7 +97,6 @@ const createFieldArray = <Values extends object = any>({
 
   sample({
     clock: form.fieldInit,
-    source: form.$allFormState,
     target: form.validateForm,
   });
 
