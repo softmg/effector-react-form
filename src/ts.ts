@@ -1,4 +1,4 @@
-import { Store, Domain, StoreWritable, EventCallable } from 'effector';
+import { Store, Domain, StoreWritable, EventCallable, Event } from 'effector';
 import React from 'react';
 import { GetName, GetNameStr } from './utils/object-manager';
 
@@ -208,6 +208,8 @@ export type Form<Values = any, Meta = any> = {
   validateForm: EventCallable<void>;
   submit: EventCallable<void>;
   onSubmit: EventCallable<SubmitParams<Values, Meta>>;
+
+  onChangeField: Event<{ value: any; name: string; flat?: boolean }>;
 
   onChangeFieldBrowser: EventCallable<{ event: React.SyntheticEvent; name: string; flat?: boolean }>;
   onFocusFieldBrowser: EventCallable<{ event: React.SyntheticEvent; name: string }>;

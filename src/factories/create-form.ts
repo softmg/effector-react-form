@@ -480,6 +480,8 @@ const createForm = <Values extends object = any, Meta = any>({
     $meta,
     $allFormState,
 
+    onChangeField,
+
     onChangeFieldBrowser,
     onFocusFieldBrowser,
     onBlurFieldBrowser,
